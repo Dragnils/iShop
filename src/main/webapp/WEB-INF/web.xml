@@ -13,4 +13,11 @@
         <url-pattern>/xml</url-pattern>
     </servlet-mapping>
 
+    <session-config>
+        <session-timeout>60</session-timeout> <!-- время жизни сессии в минутах -->
+        <tracking-mode>COOKIE</tracking-mode>  <!-- чтобы сервер использовал для поддержи сессии только куки-->
+    </session-config>
+
+
+
 </web-app>
