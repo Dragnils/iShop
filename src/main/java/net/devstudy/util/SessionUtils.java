@@ -23,7 +23,7 @@ public class SessionUtils {
     public static void setCurrentShoppingCart(HttpServletRequest req, ShoppingCart shoppingCart) { // можем установить корзину
         req.getSession().setAttribute(Constants.CURRENT_SHOPPING_CART, shoppingCart);
     }
-    public static void clearCurrentShoppingCart(HttpServletRequest req, HttpServletResponse resp) { // можем очисть корзину
+    public static void clearCurrentShoppingCart(HttpServletRequest req, HttpServletResponse resp) { // можем очисть корзину из сессии
         req.getSession().removeAttribute(Constants.CURRENT_SHOPPING_CART); // удаляем из сессии
         WebUtils.setCookie(Constants.Cookie.SHOPPING_CART.getName(), null, 0, resp); // если куки age ="0" то куки удаляется
     }

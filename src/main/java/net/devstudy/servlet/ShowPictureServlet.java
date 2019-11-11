@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 
 @WebServlet(value="/image/*", initParams = {
-        @WebInitParam(name="ROOT_DIR", value="C:\\Users\\Anuarbek\\Desktop\\Anuar\\jee-ishop")
+        @WebInitParam(name="ROOT_DIR", value="C:\\Users\\Anuarbek\\Desktop\\Anuar\\jee-ishop\\")
 })
 public class ShowPictureServlet extends HttpServlet {
     private String rootDir;
