@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Random;
 
-@WebServlet("/shopping-cart")
+@WebServlet("/current-cart")
 public class ShoppingCartServlet extends HttpServlet {
 
 
@@ -33,11 +33,12 @@ public class ShoppingCartServlet extends HttpServlet {
     }
 
     protected void showShoppingCart(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        if(SessionUtils.isCurrentShoppingCartCreated(req)) {
+        req.getRequestDispatcher("/WEB-INF/shopping-cart.jsp").forward(req, resp); // передали управление в jsp
+        /*if(SessionUtils.isCurrentShoppingCartCreated(req)) {
             resp.getWriter().println(SessionUtils.getCurrentShoppingCart(req)); // печатает в респонс текущее состояние корзины
         } else {
             resp.getWriter().println("ShoppingCart is null");
-        }
+        }*/
     }
 
     protected void addProduct(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException { // добавляем рандомный продукт
