@@ -2,7 +2,7 @@
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" trimDirectiveWhitespaces="true"%>
     model=${model} <!-- выводится метод toString  -->
 <br>
-    model.list=${model.list} <!-- обращаемся к методу getList() класса Model, на основании bean -->
+    model.list=${model.list} <!-- обращаемся к методу getList() класса Model, на основании bean Expression Language -->
 <br>
     foreach1=
             <% Model model = (Model) request.getAttribute("model"); //считываем из request атрибут model
