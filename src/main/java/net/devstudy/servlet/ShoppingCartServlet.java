@@ -47,6 +47,7 @@ public class ShoppingCartServlet extends HttpServlet {
         shoppingCart.addProduct(r.nextInt(2), r.nextInt(1)+1); // добавляем какой то продукт в нашу корзину
     }
 
+    //синхронизация куки и сессии
     protected void sync(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         if(!SessionUtils.isCurrentShoppingCartCreated(req)) { //если в текущей сессии нету корзины
             Cookie cookie = SessionUtils.findShoppingCartCookie(req);// находим соответсвующую куки findShoppingCartCookie
