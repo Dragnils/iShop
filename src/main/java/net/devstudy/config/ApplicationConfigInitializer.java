@@ -1,6 +1,7 @@
 package net.devstudy.config;
 
 import net.devstudy.filter.SimpleFilter3;
+import net.devstudy.listener.ServletContextListenerImplJava;
 import net.devstudy.servlet.JavaConfigServlet;
 
 import javax.servlet.*;
@@ -15,6 +16,8 @@ public class ApplicationConfigInitializer implements ServletContainerInitializer
 
         FilterRegistration.Dynamic filterConfig = ctx.addFilter("SimpleFilter3", new SimpleFilter3()); // создание Фильтра через Java код
         filterConfig.addMappingForUrlPatterns(null, true, "/*");
+
+        ctx.addListener(new ServletContextListenerImplJava());// создание Слушытеля через Java код
 
     }
 }
