@@ -21,7 +21,7 @@
         </attribute>
     </tag>
 
-<!--
+
     <tag>
         <name>switch</name>
         <tag-class>net.devstudy.tag.hometask.SwitchTag</tag-class>
@@ -49,5 +49,5 @@
         <tag-class>net.devstudy.tag.hometask.DefaultTag</tag-class>
         <body-content>scriptless</body-content>
     </tag>
-    -->
+
 </taglib>
