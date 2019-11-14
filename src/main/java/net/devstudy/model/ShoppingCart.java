@@ -24,7 +24,7 @@ public class ShoppingCart implements Serializable {
             validateProductCount(count + shoppingCartItem.getCount()); // проверяем общее количество продуктов, чтобы оно не было больше 10,
             shoppingCartItem.setCount(shoppingCartItem.getCount() + count);//если корзина не пуста, то прибавляем к сущиствещим вещам, новые
         }
-        refreshStatistics();
+        refreshStatistics(); // обновляем статистику общее количество
     }
 
     public void removeProduct(Integer idProduct, int count) {
@@ -71,4 +71,12 @@ public class ShoppingCart implements Serializable {
     public String toString() {
         return String.format("ShoppingCart [products=%s, totalCount=%s]", products, totalCount);
     }
+
+   /* public String getView(){
+        StringBuilder r = new StringBuilder();
+        for(ShopingCartItem shopingCartItem: getItems()){
+            r.append(shopingCartItem.getIdProduct()).append("-&gt;").append(shopingCartItem.getCount()).append("<br>"); // "-&gt;" для указания знака > на HTML Page
+        }
+        return r.toString();
+    }*/
 }
