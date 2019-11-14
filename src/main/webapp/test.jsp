@@ -1,5 +1,7 @@
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="java-classes" uri="/WEB-INF/tags.tld"%>
+<%@ taglib prefix="tag-files" tagdir="/WEB-INF/tags" %> <!-- Создание tag файлов-->
+
 <java-classes:static /><br>
 <br>
 <hr>
@@ -74,3 +76,20 @@
 <hr>
 <-- JSP 2.0 --> <br>
 <java-classes:uppercase1>This is test!</java-classes:uppercase1>
+
+<hr>
+<br>
+<-- Создание tag файлов --> <br>
+<tag-files:static /><br>
+<tag-files:attr condition="true" /><br>
+<tag-files:attr condition="false" /><br>
+<tag-files:attr condition="${2 > 1 }" /><br>
+<tag-files:attr condition="<%=2 < 1 %>" /><br>
+
+<br>
+
+<tag-files:modal id="test1" message="Test" title="TITLE"/>
+<tag-files:modal>
+    <jsp:attribute name="id">test</jsp:attribute>
+    <jsp:attribute name="message"><span><strong>Hello world</strong></span></jsp:attribute>
+</tag-files:modal>
